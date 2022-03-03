@@ -22,8 +22,8 @@ public class LottoFactoryTest {
         final int autoLottoQuantity = 7;
         final int expectedTotalQuantity = manualLottoNumbers.size() + autoLottoQuantity;
 
-        final List<Lotto> lottoTicket = lottoFactory.generateLottoTicket(manualLottoNumbers, autoLottoQuantity);
-        final int actual = lottoTicket.size();
+        final LottoTicket lottoTicket = lottoFactory.generateLottoTicket(manualLottoNumbers, autoLottoQuantity);
+        final int actual = lottoTicket.getLottoTicket().size();
 
         assertThat(actual).isEqualTo(expectedTotalQuantity);
     }

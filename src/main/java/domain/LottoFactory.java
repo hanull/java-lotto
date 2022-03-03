@@ -7,10 +7,10 @@ import java.util.stream.Collectors;
 
 public class LottoFactory {
 
-    public List<Lotto> generateLottoTicket(List<List<Integer>> manualLottoNumbers, int autoLottoQuantity) {
+    public LottoTicket generateLottoTicket(List<List<Integer>> manualLottoNumbers, int autoLottoQuantity) {
         List<Lotto> lottoTicket = new ArrayList<>(generateManualLottoTicket(manualLottoNumbers));
         lottoTicket.addAll(generateAutoLottoTicket(autoLottoQuantity));
-        return lottoTicket;
+        return new LottoTicket(lottoTicket);
     }
 
     private List<Lotto> generateManualLottoTicket(List<List<Integer>> manualLottoNumbers) {
