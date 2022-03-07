@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 public class LottoFactory {
 
     public LottoTicket generateLottoTicket(List<List<Integer>> manualLottoNumbers, int autoLottoQuantity) {
-        List<Lotto> lottoTicket = new ArrayList<>(generateManualLottoTicket(manualLottoNumbers));
+        List<Lotto> lottoTicket = generateManualLottoTicket(manualLottoNumbers);
         lottoTicket.addAll(generateAutoLottoTicket(autoLottoQuantity));
         return new LottoTicket(lottoTicket);
     }
@@ -30,7 +30,7 @@ public class LottoFactory {
     private Lotto generateLottoAutomatically() {
         List<Number> numbers = new ArrayList<>(Number.values());
         Collections.shuffle(numbers);
-        return new Lotto(new ArrayList<>(pickLottoNumbers(numbers)));
+        return new Lotto(pickLottoNumbers(numbers));
     }
 
     private List<Number> pickLottoNumbers(List<Number> numbers) {
