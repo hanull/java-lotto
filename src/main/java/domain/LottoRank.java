@@ -4,21 +4,19 @@ import java.util.Arrays;
 
 public enum LottoRank {
 
-    FAIL(0, -1, false),
-    FIFTH(5_000, 3, false),
-    FOURTH(50_000, 4, false),
-    THIRD(1_500_000, 5, false),
-    SECOND(30_000_000, 5, true),
-    FIRST(2_000_000_000, 6, false);
+    FAIL(0, -1),
+    FIFTH(5_000, 3),
+    FOURTH(50_000, 4),
+    THIRD(1_500_000, 5),
+    SECOND(30_000_000, 5),
+    FIRST(2_000_000_000, 6);
 
     private final long amount;
     private final int matchCount;
-    private final boolean hasBonusNumber;
 
-    LottoRank(long amount, int matchCount, boolean hasBonusNumber) {
+    LottoRank(long amount, int matchCount) {
         this.amount = amount;
         this.matchCount = matchCount;
-        this.hasBonusNumber = hasBonusNumber;
     }
 
     public static LottoRank findRank(int count, boolean bonusNumber) {
